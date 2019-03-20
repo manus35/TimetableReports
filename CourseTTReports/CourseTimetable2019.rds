@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CourseTimetable2019">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=192.168.1.110;Initial Catalog=CourseTimetable</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>2b20e6f1-e706-4fd3-b339-ecf6513866e8</DataSourceID>
+</RptDataSource>

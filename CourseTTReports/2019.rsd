@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>CourseTimetable2019</DataSourceReference>
+      <CommandText>SELECT
+  Course.CourseName
+  ,DepartmentGroup.DeptGroupName
+  ,CourseSession.PeriodID
+  ,Student.FirstName
+  ,Student.LastName
+    ,Instructor.InstructorFirstName
+  ,Instructor.InstructorLastName
+  
+  ,CourseSession.RoomNumber
+FROM
+  DepartmentGroup
+  INNER JOIN Course
+    ON DepartmentGroup.DeptGroupID = Course.DeptGroupID
+  INNER JOIN Student
+    ON DepartmentGroup.DeptGroupID = Student.DeptGroupID
+	 Left  JOIN CourseSession
+    ON Course.CourseID = CourseSession.CourseID
+   Left JOIN Instructor
+    ON CourseSession.InstructorID = Instructor.InstructorID
+	
+</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="CourseName">
+        <DataField>CourseName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="DeptGroupName">
+        <DataField>DeptGroupName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="PeriodID">
+        <DataField>PeriodID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="FirstName">
+        <DataField>FirstName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="LastName">
+        <DataField>LastName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="InstructorFirstName">
+        <DataField>InstructorFirstName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="InstructorLastName">
+        <DataField>InstructorLastName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="RoomNumber">
+        <DataField>RoomNumber</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
